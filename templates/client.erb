@@ -1,7 +1,8 @@
 <%
-	# Downcase all information
-	dom = scope.lookupvar('::domain').downcase
-	h = scope.lookupvar('::hostname').downcase
+  # Downcase all information
+  dom = scope.lookupvar('::domain').downcase
+  h = scope.lookupvar('::hostname').downcase
+  hostgroup = scope.lookupvar('::host_group').downcase
 %>
 
 ### Munin client from Puppet template
@@ -11,7 +12,11 @@
 <% if description != 'absent' -%>
 # Description: <%= description.gsub!(/\n/, ' ') %>
 <% end -%>
+<% if hostgroup %>
+[<%= hostgroup %>;<%= fhost.downcase %>]
+<% else %>
 [<%= fhost.downcase %>]
+<% end %>
 <% if use_ssh -%>
     address ssh://<%= host %>/bin/nc localhost <%= port %>
 <% else -%>
