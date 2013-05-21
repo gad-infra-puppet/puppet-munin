@@ -2,7 +2,7 @@
   # Downcase all information
   dom = scope.lookupvar('::domain').downcase
   h = scope.lookupvar('::hostname').downcase
-  hostgroup = scope.lookupvar('::host_group').downcase
+  hostgroup = (scope.lookupvar('::host_group') || 'default').downcase
 %>
 
 ### Munin client from Puppet template
