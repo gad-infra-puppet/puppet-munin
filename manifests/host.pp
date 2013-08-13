@@ -13,7 +13,8 @@ class munin::host(
 
   concat::fragment{'munin.conf.header':
     target => '/etc/munin/munin.conf',
-    source => [ "puppet:///modules/site_munin/config/host/${::fqdn}/munin.conf.header",
+    source => [ "puppet:///files/config/munin/munin.conf.header",
+                "puppet:///modules/site_munin/config/host/${::fqdn}/munin.conf.header",
                 "puppet:///modules/site_munin/config/host/munin.conf.header.${::operatingsystem}.${::lsbdistcodename}",
                 "puppet:///modules/site_munin/config/host/munin.conf.header.${::operatingsystem}",
                 "puppet:///modules/site_munin/config/host/munin.conf.header",
