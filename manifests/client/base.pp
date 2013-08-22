@@ -21,7 +21,7 @@ class munin::client::base {
     },
     port       => $munin::client::port,
     use_ssh    => $munin::client::use_ssh,
-    config     => [ 'use_node_name yes', 'load.load.warning 5', 'load.load.critical 10'],
+    config     => $munin::client::config,
     export_tag => $munin::client::export_tag,
   }
   include munin::plugins::base

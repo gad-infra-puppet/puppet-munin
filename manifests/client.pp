@@ -10,7 +10,8 @@ class munin::client(
   $use_ssh = false,
   $manage_shorewall = false,
   $shorewall_collector_source = 'net',
-  $export_tag = 'munin'
+  $export_tag = 'munin',
+  $config = [ 'use_node_name yes', 'load.load.warning 5', 'load.load.critical 10']
 ) {
   case $::operatingsystem {
     openbsd: { include munin::client::openbsd }
