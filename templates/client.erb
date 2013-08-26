@@ -16,7 +16,7 @@
 # Description: <%= description.gsub!(/\n/, ' ') %>
 <% end -%>
 <% if hostgroup -%>
-[<%= hostgroup %>]
+[<%= hostgroup %>;]
 [<%= hostgroup %>;<%= fhost.downcase %>]
 <% else -%>
 [<%= fhost.downcase %>]
