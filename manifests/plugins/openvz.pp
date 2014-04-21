@@ -1,4 +1,4 @@
-class munin::plugins::kvm {
+class munin::plugins::openvz {
   munin::plugin::deploy {
     [ 'openvzcpu' ]:
       config => 'user root\nenv.drawidle 1',
