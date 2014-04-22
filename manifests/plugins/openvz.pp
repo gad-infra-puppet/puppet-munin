@@ -7,4 +7,8 @@ class munin::plugins::openvz {
       ensure => 'openvz_',
       config => 'user root'
   }
+
+  package { ['libcolor-calc-perl', 'libgraphics-colorobject-perl']:
+    ensure => "present";
+  }
 }
