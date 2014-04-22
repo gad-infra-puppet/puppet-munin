@@ -4,7 +4,7 @@ class munin::plugins::openvz {
       config => "user root\nenv.drawidle 1",
       require => Package['libcolor-calc-perl', 'libgraphics-colorobject-perl'];
     ['openvz_physpages', 'openvz_laverage', 'openvz_status']:
-      ensure => 'openvz_',
+      source => 'openvz_',
       config => 'user root'
   }
 
